@@ -30,7 +30,7 @@ flowchart LR
             L1 --> P2[output]
             L2 --> P2
             
-            R[Python\n3.13.2-slim] --- J[JDK 11]
+            R[Python\n3.11] --- J[JDK 11]
             J --- PS[PySpark]
             PS --- E
         end

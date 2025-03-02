@@ -8,7 +8,7 @@ flowchart LR
     
     subgraph "K8s Cluster"
         subgraph "Docker Container" 
-            S2 -->|Mount| P1[/app/data/input]
+            S2 -->|Mount| P1[input]
             P1 -->|Read| E[Extract\nPySpark]
             
             E --> T1[Transform\nPositions]
@@ -17,7 +17,7 @@ flowchart LR
             T1 -->|Calculate\nRank| L1[Load\nParquet]
             T2 -->|Sum\nMax| L2[Load\nParquet]
             
-            L1 --> P2[/app/data/output]
+            L1 --> P2[output]
             L2 --> P2
             
             R[Python\n3.13.2-slim] --- J[JDK 11]
@@ -27,7 +27,7 @@ flowchart LR
     end
     
     P2 -->|Mount| S3[Output Dir\n/data/output]
-    S3 -->|positions_{season}.parquet\nbest_scoring_team.parquet| S4[(Storage\nParquet)]
+    S3 -->|positions.parquet\nbest_scoring_team.parquet| S4[(Storage\nParquet)]
     
     classDef storage fill:#f96,stroke:#333,stroke-width:1.5px
     classDef container fill:#bef,stroke:#333,stroke-width:1.5px

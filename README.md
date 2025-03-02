@@ -1,13 +1,13 @@
 # **Premier League ETL**
 
-## 📌 **Project Description**
+##  **Project Description**
 This project implements an **ETL pipeline** using **PySpark** to process Premier League match data stored in **JSON format**. The ETL extracts data, transforms it to calculate league positions and the best-scoring team per season, and stores the results in **Parquet format**.
 
 The solution is containerized with **Docker** and designed to run on **Kubernetes** for scalability.
 
 ---
 
-## 🚀 **Architecture**
+## **Architecture**
 
 ### **Premier League ETL Architecture**
 ```mermaid
@@ -50,7 +50,7 @@ flowchart LR
 
 ---
 
-## ⚙️ **ETL Workflow**
+##  **ETL Workflow**
 
 ### **Premier League ETL Workflow**
 ```mermaid
@@ -99,13 +99,13 @@ flowchart TD
 
 ## 📖 **How to Deploy**
 
-### **1️⃣ Prerequisites**
+### **1 Prerequisites**
 Ensure you have the following installed:
-- **Docker** 🐳
-- **Kubernetes (kubectl & Minikube or a cluster)** ☸️
-- **Python 3.13.2** 🐍
+- **Docker** 
+- **Kubernetes (kubectl & Minikube or a cluster)** 
+- **Python 3.13.2** 
 
-### **2️⃣ Build and Run with Docker**
+### **2 Build and Run with Docker**
 #### **Build Docker Image:**
 ```bash
 sudo docker build --no-cache -t etl_pyspark .
@@ -118,7 +118,7 @@ sudo docker run --rm -v /home/user/data/input:/app/data/input \
                  etl_pyspark
 ```
 
-### **3️⃣ Deploy on Kubernetes**
+### **3 Deploy on Kubernetes**
 #### **Create a Deployment (YAML):**
 ```yaml
 apiVersion: apps/v1
@@ -179,15 +179,12 @@ positions_0910.parquet  positions_1011.parquet  best_scoring_team.parquet
 
 ---
 
-## 📌 **Conclusion**
 This ETL pipeline automates the processing of Premier League match data using **PySpark**. The **Docker + Kubernetes** integration makes the solution scalable and adaptable to production environments.
 
-🚀 Feel free to **modify or extend** this ETL process according to your needs!
 
 ---
 
-🔹 **Author:** _Your Name_  
-🔹 **License:** _MIT_  
-🔹 **Contributors:** _Open for PRs!_  
+**Author:** Manuel Alejandro Bayona Leal  
+
 
 ---

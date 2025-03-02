@@ -1,6 +1,6 @@
 FROM python:3.11
 
-# Instalar Java y dependencias
+# install java + dependencies
 RUN apt-get update && apt-get install -y \
     openjdk-11-jdk \
     curl \
@@ -8,22 +8,22 @@ RUN apt-get update && apt-get install -y \
     tar \
     && rm -rf /var/lib/apt/lists/*
 
-# Configurar variables de entorno para Java
+# java env vars
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
-# Establecer directorio de trabajo
+# work directory
 WORKDIR /app
 
-# Copiar archivos del proyecto
+# copy project files
 COPY src/ ./src/
 COPY requirements.txt .
 
-# Instalar dependencias de Python
+# install dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Crear directorios para input y output
+# create output and input dirs
 RUN mkdir -p /app/data/input /app/data/output
 
-# Ejecutar el ETL con argumentos parametrizados
+# etl execution
 CMD ["python3", "src/main.py", "--input_path", "/app/data/input", "--output_path", "/app/data/output"]

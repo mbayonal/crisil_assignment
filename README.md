@@ -103,7 +103,7 @@ flowchart TD
 Ensure you have the following installed:
 - **Docker** 
 - **Kubernetes (kubectl & Minikube or a cluster)** 
-- **Python 3.13.2** 
+- **Python 3.11** 
 
 ### **2 Build and Run with Docker**
 #### **Build Docker Image:**

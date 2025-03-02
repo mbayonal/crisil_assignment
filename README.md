@@ -97,7 +97,7 @@ flowchart TD
 
 ---
 
-## 📖 **How to Deploy**
+## **How to Deploy**
 
 ### **1 Prerequisites**
 Ensure you have the following installed:
@@ -167,7 +167,7 @@ kubectl get pods
 kubectl logs <POD_NAME>
 ```
 
-### **4️⃣ Validate Output**
+### **4 Validate Output**
 After execution, check the **output directory** for Parquet files:
 ```bash
 ls /home/user/data/output
